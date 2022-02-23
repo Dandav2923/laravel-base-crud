@@ -20,7 +20,7 @@ class ComicController extends Controller
             'title' => 'Comic Home'
         ];
 
-        return view('comics.index', $data);
+        return view('comic.index', $data);
     }
 
     /**
@@ -45,8 +45,10 @@ class ComicController extends Controller
         $comic = new Comic();
         $comic->fill($data);
         $comic->save();
-    }
 
+         return redirect()->route('comic.show', $comic->id);
+    }
+    
     /**
      * Display the specified resource.
      *
