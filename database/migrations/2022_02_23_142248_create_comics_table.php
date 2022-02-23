@@ -17,10 +17,8 @@ class CreateComicsTable extends Migration
             $table->id();
             $table->string('author');
             $table->string('illustrator');
-            $table->strin('description');
-            $table->
-            $table->
-            $table->
+            $table->string('description');
+            $table->float('price');
             $table->timestamps();
         });
     }
