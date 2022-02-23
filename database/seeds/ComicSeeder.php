@@ -18,6 +18,7 @@ class ComicSeeder extends Seeder
             $comic->illustrator = $faker->word();
             $comic->description = $faker->words(10, true);
             $comic->price = $faker->randomFloat(2, 50, 200);
+            $comic->save();
         }
     }
 }
