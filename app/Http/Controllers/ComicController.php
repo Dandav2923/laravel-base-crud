@@ -14,7 +14,13 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+        $comics = Comic::paginate(15);
+        $data = [
+            'comics' => $comics,
+            'title' => 'Comic Home'
+        ];
+
+        return view('comics.index', $data);
     }
 
     /**
@@ -24,7 +30,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comic.create', ['title' => 'Create New Monitor']);
     }
 
     /**
@@ -35,7 +41,10 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $comic = new Comic();
+        $comic->fill($data);
+        $comic->save();
     }
 
     /**
@@ -46,7 +55,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        dd($comic);
     }
 
     /**
