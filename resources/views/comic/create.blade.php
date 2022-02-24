@@ -9,7 +9,9 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form>
+                <form action="{{route('comic.store')}}" method="POST">
+                    @csrf
+                    @method('POST')
                     <div class="mb-3">
                         <label for="author" class="form-label">New Element</label>
                         <input type="text" class="form-control" id="author"           aria-describedby="emailHelp" name="Author" placeholder="Inserisci l'autore">
