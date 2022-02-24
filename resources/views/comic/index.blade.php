@@ -10,6 +10,7 @@
                         <p>{{$item->description}}</p>
                         <span>{{$item->price}}</span>
                         <a href="{{route('comic.create')}}">Create new element</a>
+                        <a href="{{route('comic.edit', $item->id)}}">Modifica elemento</a>
                 </div>
             @endforeach
         </div>
