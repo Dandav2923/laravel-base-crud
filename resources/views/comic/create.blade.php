@@ -11,23 +11,22 @@
             <div class="col">
                 <form>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1"                    aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">
-                            We'll never share your email with anyone else.
-                        </div>
+                        <label for="author" class="form-label">New Element</label>
+                        <input type="text" class="form-control" id="author"           aria-describedby="emailHelp" name="Author" placeholder="Inserisci l'autore">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="illustrator" class="form-label"></label>
+                        <input type="password" class="form-control" id="illustrator" name="illustrator" placeholder="inserisci l'illustratore">
                     </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">
-                            Check me out
-                        </label>
+                    <div class="mb-3">
+                        <label for="description" class="form-label"></label>
+                        <input type="password" class="form-control" id="description" name="description" placeholder="inserisci la descrizione">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="mb-3">
+                        <label for="price" class="form-label"></label>
+                        <input type="password" class="form-control" id="price" name="price" placeholder="inserisci il prezzo del fumetto">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Crea un nuovo elemento</button>
                 </form>                 
             </div>
         </div>
