@@ -41,12 +41,21 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $validateData = $request->validate(
+        [
+            'author'=> 'required | max:80',
+            'illustrator' => 'required | max:80',
+            'description' => 'required | max:1000',
+            'price'=> 'required | numeric'
+        ]);
+
+
         $comic = new Comic();
+        $data = $request->all();
         $comic->fill($data);
         $comic->save();
 
-         return redirect()->route('comic.show', $comic->id);
+         return redirect()->route('comic.show', $comic);
     }
     
     /**
@@ -94,6 +103,9 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()
+            ->route('comic.index')
+            ->with('status', "Hai eliminato correttamente il dato");
     }
 }
